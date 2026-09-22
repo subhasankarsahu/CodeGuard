@@ -21,15 +21,11 @@ import type { SecuritySummaryResponse } from "@shared/schema";
 
 interface AISecuritySummaryProps {
   reviewId: string;
-  initialRiskLevel?: "low" | "medium" | "high" | string;
-  initialSummary?: string | null;
   commentsCount: number;
 }
 
 export function AISecuritySummary({
   reviewId,
-  initialRiskLevel = "low",
-  initialSummary,
   commentsCount,
 }: AISecuritySummaryProps) {
   const [hasManuallyRequested, setHasManuallyRequested] = useState(false);
