@@ -16,20 +16,16 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { apiRequest } from "@/lib/queryClient";
+import { apiRequest } } from "@/lib/queryClient";
 import type { SecuritySummaryResponse } from "@shared/schema";
 
 interface AISecuritySummaryProps {
   reviewId: string;
-  initialRiskLevel?: "low" | "medium" | "high" | string;
-  initialSummary?: string | null;
   commentsCount: number;
 }
 
 export function AISecuritySummary({
   reviewId,
-  initialRiskLevel = "low",
-  initialSummary,
   commentsCount,
 }: AISecuritySummaryProps) {
   const [hasManuallyRequested, setHasManuallyRequested] = useState(false);
